@@ -20,9 +20,15 @@ public class CreateUserStep {
     }
 
     @And("da click en {string}")
-    public void daClickEn(String arg0) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void daClickEn(String boton) {
+        switch (boton){
+            case "Sign In":
+            case "Register Now":
+                homePage.darClick();
+                break;
+
+        }
+
     }
 
     @Then("ingresa a la página de registro")
