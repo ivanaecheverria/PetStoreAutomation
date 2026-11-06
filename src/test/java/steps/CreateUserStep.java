@@ -7,11 +7,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import page.HomePage;
+import page.LoginPage;
 
 public class CreateUserStep {
 
     HomePage homePage = new HomePage(DriverManager.getDriver());
-
+    LoginPage loginPage = new LoginPage(DriverManager.getDriver());
 
     @Given("ingresa en esta URL {string}")
     public void accederURL(String url) {
@@ -23,8 +24,10 @@ public class CreateUserStep {
     public void daClickEn(String boton) {
         switch (boton){
             case "Sign In":
-            case "Register Now":
                 homePage.darClick();
+                break;
+            case "Register Now":
+                loginPage.darClick();
                 break;
 
         }
